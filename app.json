@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Activity 3",
-    "slug": "activity-3",
+    "name": "Activity 3 Log In Screen",
+    "slug": "activity-3-log-in-screen",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -30,6 +30,7 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "description": "Log In Screen Only"
   }
 }
