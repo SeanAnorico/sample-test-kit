@@ -1,151 +1,53 @@
-import React from "react";
-import { View, Image, Text, Dimensions,TextInput, Button, ImageBackground } from "react-native";
-import Lottieview from "lottie-react-native";
+import React from 'react';
+import { View, Image, Text, Dimensions, Button, ImageBackground, StyleSheet } from "react-native";
+import Footer from '../components/LogInScreen/footer';
+import Header from '../components/LogInScreen/Header';
+import Login from '../components/LogInScreen/login';
+
+
 
 export default function TabOneScreen() {
-  
+  // return <CmpLogin />;
   return (
-    // main container
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: '#000814',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}
-      >
-      <ImageBackground
-        style={{
-          height: '100%',
-          width: '100%',
-          justifyContent: "center",
-          alignItems: 'center',
-        }}
-       source={{
-         uri: 'https://cdn.mos.cms.futurecdn.net/BfemybeKVXCf9pgX9WCxsc.jpg'
-        }} 
-        resizeMode="cover" 
-      >
-      {/* login container */}
-      <View style={{
-        height: Dimensions.get('screen').height * 0.5,
-        width: '80%',
-        backgroundColor: '#003459',
-        padding: 10,
-        borderRadius: 10,
-        opacity: 0.8,
-      }}
-      >
-
-        {/* title container */}
-        <View
-          style={{
-            flex: 0,
-            backgroundColor: '#007EA7',
-            paddingVertical: 10,
-            paddingHorizontal: 10,
-            marginBottom: 10,
-            borderRadius: 10,
-            alignItems: 'center',
-          }}
-        >
-          <Text
-            style={{
-              color: '#FFFFFF',
-              fontFamily: 'poppins-bold',
-              fontSize: 24,
-            }}
-            numberOfLines={1}
-          >
-            LOG IN
-          </Text>
-        </View>
-
-        {/* Image container */}
-        <View
-          style={{
-            flex: 1,
-            marginBottom: 10,
-            borderRadius: 10,
-            overflow: 'hidden',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <Lottieview 
-            style={{
-              height: '100%',
-              width: '100%',
-            }}
-            source={require('../assets/Animation/98303-little-robot-icon.json')}
-            autoPlay
-          />
-
-          {/* <Image
-            style={{
-              height: '100%',
-              width: '100%',
-              resizeMode: 'cover'
-            }}
-            source={require('../assets/images/1099445.png')}
-          /> */}
-        </View>
-
-        {/* Inout container */}
-        <View
-          style={{
-            flex: 0,
-            minHeight: 100,
-            maxHeight: 200,
-            backgroundColor: '#007EA7',
-            padding: 5,
-            borderRadius: 10,
-          }}
-        >
-          <TextInput
-            style={{
-              color: '#FFFFFF',
-              height: 40,
-              margin: 5,
-              borderRadius:10,
-              borderColor: '#00171F',
-              borderWidth: 1,
-              padding: 10,
-              fontFamily: 'poppins-regular',
-            }}
-            
-            placeholder='Username'
-          />
-          <TextInput
-            style={{
-              color: '#FFFFFF',
-              height: 40,
-              margin: 5,
-              borderRadius:10,
-              borderColor: '#00171F',
-              borderWidth: 1,
-              padding: 10,
-              fontFamily: 'poppins-regular',
-            }}
-            placeholder='Password'
-            secureTextEntry={true}
-          />
-          <View
-          style={{
-            margin: 10,
-            paddingHorizontal: 50,
-          }}
-          >
-            <Button 
-              title='Log In'
-              onPress={()=> alert("Should Be Logged In")}
-              color='#00171F'
-            />
-          </View>
-        </View>
-
-      </View>
-    </ImageBackground>  
-    </View>
-  );
+     <View style={styles.main}>
+       {/* Header */}
+       <View style={styles.header}>
+          <Header />
+       </View>
+       {/* Login */}
+       <View style= {styles.login}>
+        <Login />
+       </View>
+       {/* Footer */}
+       <View style={styles.footer}>
+         <Footer />
+       </View>
+     </View>
+  )
 }
+
+const styles = StyleSheet.create({
+  main: {
+    flex: 1,
+    backgroundColor: '#1E2749',
+    alignItems: 'center',
+  },
+  header: {
+    height: Dimensions.get('screen').height * 0.4,
+    width: '80%',
+    paddingTop:20,
+    alignItems: 'center'
+  },
+  login: {
+    // backgroundColor: '#E4D9FF',
+    height: Dimensions.get('screen').height * 0.4,
+    width: '80%',
+    justifyContent: 'center',
+  },
+  footer: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    paddingBottom:10,
+    // backgroundColor: '#30343F',
+  },
+})
