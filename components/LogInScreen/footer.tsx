@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Text, TouchableOpacity, Alert} from 'react-native';
+import {View, StyleSheet, Text, TouchableOpacity, Alert, ScrollView} from 'react-native';
 
 export default function Footer() {
     return (
